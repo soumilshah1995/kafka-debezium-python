@@ -76,7 +76,7 @@ COPY THE NAME
 docker run --tty --network <COPY NAME>  confluentinc/cp-kafkacat kafkacat -b kafka:29092 -C -s key=s -s value=avro -r http://schema-registry:8081 -t postgres.public.sales
 
 ```
-# happy Leanring 
+# Happy Learning  
 
 # Note
 * i am working on streaming part currently with hudi stuck on deserialization part in spark issue can be found here 
