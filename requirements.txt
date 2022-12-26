@@ -1,0 +1,8 @@
+kafka-python
+pyspark
+SQLAlchemy
+psycopg2
+confluent-kafka
+py-ccloud
+fastavro
+avro-python3

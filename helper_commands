@@ -1,0 +1,31 @@
+
+
+
+
+
+CREATE TABLE sales (
+	InvoiceID int NOT NULL ,
+	ItemID int NOT NULL,
+	Category varchar(255),
+	Price decimal ,
+	Quantity int not NULL,
+	OrderDate timestamp,
+	DestinationState varchar(2),
+	ShippingType varchar(255),
+	Referral varchar(255),
+	PRIMARY KEY (InvoiceID)
+
+)
+
+ALTER TABLE public.sales REPLICA IDENTITY  FULL
+
+
+docker run --tty --network debezium_default  confluentinc/cp-kafkacat kafkacat -b kafka:29092 -C -s key=s -s value=avro -r http://schema-registry:8081 -t postgres.public.sales
+
+
+docker run -
+    -tty --network debezium_default  confluentinc/cp-kafkacat kafkacat
+    -b kafka:9092
+    -C -s key=s -s value=avro
+    -r http://schema-registry:8081
+     -t postgres.public.student
